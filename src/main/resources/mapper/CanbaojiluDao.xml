@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CanbaojiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CanbaojiluEntity" id="canbaojiluMap">
+        <result property="baoxianmingcheng" column="baoxianmingcheng"/>
+        <result property="baoxianfenlei" column="baoxianfenlei"/>
+        <result property="baoxiantupian" column="baoxiantupian"/>
+        <result property="baodanzonge" column="baodanzonge"/>
+        <result property="baodanfangshi" column="baodanfangshi"/>
+        <result property="jiaofeileixing" column="jiaofeileixing"/>
+        <result property="canbaoriqi" column="canbaoriqi"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="jine" column="jine"/>
+        <result property="shenfenzhenghao" column="shenfenzhenghao"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CanbaojiluVO" >
+		SELECT * FROM canbaojilu  canbaojilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CanbaojiluVO" >
+		SELECT  canbaojilu.* FROM canbaojilu  canbaojilu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CanbaojiluView" >
+
+		SELECT  canbaojilu.* FROM canbaojilu  canbaojilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CanbaojiluView" >
+		SELECT * FROM canbaojilu  canbaojilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
